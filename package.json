@@ -5,15 +5,10 @@
   "dependencies": {
     "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.9.1",
-    "bootstrap": "^4.4.1",
-    "material-auto-rotating-carousel": "^3.0.2",
-    "material-ui-image": "^3.2.3",
     "react": "^16.7.0",
-    "react-bootstrap": "^1.0.0",
     "react-dom": "^16.7.0",
     "react-material-ui-carousel": "^1.1.1",
-    "react-scripts": "^3.3.0",
-    "react-swipeable-views": "^0.13.9"
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
