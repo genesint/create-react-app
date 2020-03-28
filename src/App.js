@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel';
-import { red, blue, green } from '@material-ui/core/colors';
 import { Paper, Grid, } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,6 +14,10 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  carousel: {
+    height: 200,
+    width: "100 %",
+  }
 }));
 class App extends Component {
   render() {
@@ -27,8 +31,6 @@ class App extends Component {
 function SimpleContainer() {
   const classes = useStyles();
 
-  const open = true;
-
   return (
     <React.Fragment>
       <CssBaseline />
@@ -36,35 +38,43 @@ function SimpleContainer() {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
+              <Carousel className={classes.carousel}>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://test.avantgardedistributors.com/web/image/360/Lucas+Plumbing+Reading+Plumbers+2-5184x3456.jpg"
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://test.avantgardedistributors.com/web/image/3077"
+                    alt="Third slide"
+                  />
 
-              <div style={{ position: 'relative', width: '100%', height: 500 }}>
-                <AutoRotatingCarousel
-                  label='Get started'
-                  open={open}
-                >
-                  <Slide
-                    media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' alt='hi' />}
-                    mediaBackgroundStyle={{ backgroundColor: red[400] }}
-                    style={{ backgroundColor: red[600] }}
-                    title='This is a very cool feature'
-                    subtitle='Just using this will blow your mind.'
+                  <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://test.avantgardedistributors.com/web/image/775/IMG-20190125-WA0003.jpg"
+                    alt="Third slide"
                   />
-                  <Slide
-                    media={<img src='http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png' alt='hi' />}
-                    mediaBackgroundStyle={{ backgroundColor: blue[400] }}
-                    style={{ backgroundColor: blue[600] }}
-                    title='Ever wanted to be popular?'
-                    subtitle='Well just mix two colors and your are good to go!'
-                  />
-                  <Slide
-                    media={<img src='http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png' alt='hi' />}
-                    mediaBackgroundStyle={{ backgroundColor: green[400] }}
-                    style={{ backgroundColor: green[600] }}
-                    title='May the force be with you'
-                    subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
-                  />
-                </AutoRotatingCarousel>
-              </div>
+
+                  <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
             </Paper>
           </Grid>
         </Grid>
