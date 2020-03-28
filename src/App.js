@@ -41,7 +41,6 @@ function SimpleContainer() {
                 <AutoRotatingCarousel
                   label='Get started'
                   open={open}
-                  style={{ position: 'absolute' }}
                 >
                   <Slide
                     media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' alt='hi' />}
