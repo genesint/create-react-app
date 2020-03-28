@@ -15,8 +15,10 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
   },
   carousel: {
-    height: 200,
-    width: "100 %",
+    height: 320,
+  },
+  carouselItem: {
+    height: 320,
   }
 }));
 class App extends Component {
@@ -41,7 +43,7 @@ function SimpleContainer() {
               <Carousel className={classes.carousel}>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100"
+                    className={classes.carousel}
                     src="https://test.avantgardedistributors.com/web/image/360/Lucas+Plumbing+Reading+Plumbers+2-5184x3456.jpg"
                     alt="First slide"
                   />
@@ -52,7 +54,7 @@ function SimpleContainer() {
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100"
+                    className={classes.carousel}
                     src="https://test.avantgardedistributors.com/web/image/3077"
                     alt="Third slide"
                   />
@@ -64,7 +66,7 @@ function SimpleContainer() {
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100"
+                    className={classes.carousel}
                     src="https://test.avantgardedistributors.com/web/image/775/IMG-20190125-WA0003.jpg"
                     alt="Third slide"
                   />
