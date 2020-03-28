@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Paper, Grid, } from '@material-ui/core'
+import { Paper, Grid, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-material-ui-carousel';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,12 +13,6 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  carousel: {
-    height: 320,
-  },
-  carouselItem: {
-    height: 320,
-  }
 }));
 class App extends Component {
   render() {
@@ -32,6 +25,16 @@ class App extends Component {
 
 function SimpleContainer() {
   const classes = useStyles();
+  var items = [
+    {
+      name: "Random Name #1",
+      description: "Probably the most random thing you have ever seen!"
+    },
+    {
+      name: "Random Name #2",
+      description: "Hello World!"
+    }
+  ];
 
   return (
     <React.Fragment>
@@ -39,45 +42,13 @@ function SimpleContainer() {
       <div className={classes.root}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <Carousel className={classes.carousel}>
-                <Carousel.Item>
-                  <img
-                    className={classes.carousel}
-                    src="https://test.avantgardedistributors.com/web/image/360/Lucas+Plumbing+Reading+Plumbers+2-5184x3456.jpg"
-                    alt="First slide"
-                  />
-                  <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className={classes.carousel}
-                    src="https://test.avantgardedistributors.com/web/image/3077"
-                    alt="Third slide"
-                  />
-
-                  <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className={classes.carousel}
-                    src="https://test.avantgardedistributors.com/web/image/775/IMG-20190125-WA0003.jpg"
-                    alt="Third slide"
-                  />
-
-                  <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              </Carousel>
-            </Paper>
+            <Carousel>
+              {
+                items.map(item => {
+                  return <Item item={item} />
+                })
+              }
+            </Carousel>
           </Grid>
         </Grid>
       </div>
@@ -85,6 +56,21 @@ function SimpleContainer() {
   );
 }
 
+function Item(props) {
+  const classes = useStyles();
+  return (
+    <React.Fragment>
+      <Paper className={classes.paper}>
+        <h2>{props.item.name}</h2>
+        <p>{props.item.description}</p>
+
+        <Button className="CheckButton">
+          Check it out!
+      </Button>
+      </Paper>
+    </React.Fragment>
+  )
+}
 export default App;
 
 
