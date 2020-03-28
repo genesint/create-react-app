@@ -54,7 +54,7 @@ function SimpleContainer() {
         <Grid container spacing={3}>
           <Grid item xs={2}></Grid>
           <Grid item xs={8}>
-            <Carousel animation="slide" interval={1000} className={classes.carousel} >
+            <Carousel animation="fade" interval={5000} className={classes.carousel} >
               {
                 items.map(item => {
                   return <Item className={classes.carouselItem} item={item} key={item.name} />
