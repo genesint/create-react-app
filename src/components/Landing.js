@@ -16,12 +16,12 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    maxHeight: 320,
+    height: 320,
     overflow: "hidden",
 
   },
   gridRoot: {
-    display: 'flex',
+    //display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
@@ -51,8 +51,7 @@ export default function Landing() {
           <Paper className={classes.paper} elevation={0}>
             <Link href="https://avantgardedistributors.com/services" >
               <Image
-                style={{ width: "100%" }}
-                src="https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1"
+                src="https://www.dropbox.com/s/bb3bp9zwiqclrb4/drip3.jpg?dl=1"
               />
             </Link>
           </Paper>
@@ -69,27 +68,27 @@ export default function Landing() {
 
 const tileData = [
   {
-    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
+    img: "https://www.dropbox.com/s/s8erukb5nx7tbhv/pumps.jpg?dl=1",
     title: 'Pumps',
     url: 'https://avantgardedistributors.com/shop/category/water-division-pumps-1?order=name+asc',
   },
   {
-    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
+    img: "https://www.dropbox.com/s/24i0h5xxtrth7jr/pipes.jpg?dl=1",
     title: 'Hoses',
     url: 'https://avantgardedistributors.com/shop/category/water-division-hoses-3?order=name+asc',
   },
   {
-    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
+    img: "https://www.dropbox.com/s/03c8q0lt2kr0278/assecories.jpg?dl=1",
     title: 'Fittings & Accessories',
     url: 'https://avantgardedistributors.com/shop/category/water-division-fittings-accessories-6?order=name+asc',
   },
   {
-    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
+    img: "https://www.dropbox.com/s/r5lgl1mx9ruz428/generator.jpg?dl=1",
     title: 'Generators',
     url: 'https://avantgardedistributors.com/shop/category/water-division-generators-4?order=name+asc',
   },
   {
-    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
+    img: "https://www.dropbox.com/s/jshc1zq0opmhyfi/parts.jpg?dl=1",
     title: 'Spares',
     url: 'https://avantgardedistributors.com/shop/category/water-division-spares-5?order=name+asc',
   },
@@ -99,12 +98,10 @@ function SingleLineGridList() {
   const classes = useStyles();
 
   return (
-    <div classes={{
-      root: classes.gridRoot
-    }}>
-      <GridList className={classes.gridList} cols={5}>
+    <div className={classes.gridRoot}>
+      <GridList className={classes.gridList} cols={5} cellHeight={240} spacing={1} >
         {tileData.map((tile) => (
-          <GridListTile key={tile.title} component={Link} href={tile.url}>
+          <GridListTile key={tile.title} component={Link} href={tile.url} >
             <Image
               animationDuration={5000}
               src={tile.img}
@@ -116,6 +113,6 @@ function SingleLineGridList() {
           </GridListTile>
         ))}
       </GridList>
-    </div>
+    </div >
   );
 }
