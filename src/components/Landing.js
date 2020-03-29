@@ -51,10 +51,8 @@ export default function Landing() {
           <Paper className={classes.paper} elevation={0}>
             <Link href="https://avantgardedistributors.com/services" >
               <Image
-                animationDuration={5000}
                 style={{ width: "100%" }}
-                src="https://test.avantgardedistributors.com/web/image/product.product/2769/image"
-                onClick={() => console.log('onClick')}
+                src="https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1"
               />
             </Link>
           </Paper>
@@ -71,27 +69,27 @@ export default function Landing() {
 
 const tileData = [
   {
-    img: "https://test.avantgardedistributors.com/web/image/product.product/2769/image",
+    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
     title: 'Pumps',
     url: 'https://avantgardedistributors.com/shop/category/water-division-pumps-1?order=name+asc',
   },
   {
-    img: "https://test.avantgardedistributors.com/web/image/product.product/2769/image",
+    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
     title: 'Hoses',
     url: 'https://avantgardedistributors.com/shop/category/water-division-hoses-3?order=name+asc',
   },
   {
-    img: "https://test.avantgardedistributors.com/web/image/product.product/2769/image",
+    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
     title: 'Fittings & Accessories',
     url: 'https://avantgardedistributors.com/shop/category/water-division-fittings-accessories-6?order=name+asc',
   },
   {
-    img: "https://test.avantgardedistributors.com/web/image/product.product/2769/image",
+    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
     title: 'Generators',
     url: 'https://avantgardedistributors.com/shop/category/water-division-generators-4?order=name+asc',
   },
   {
-    img: "https://test.avantgardedistributors.com/web/image/product.product/2769/image",
+    img: "https://www.dropbox.com/s/010npqk3rfx4dhc/testimage.jpeg?dl=1",
     title: 'Spares',
     url: 'https://avantgardedistributors.com/shop/category/water-division-spares-5?order=name+asc',
   },
