@@ -7,6 +7,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Link from '@material-ui/core/Link';
 import Image from 'material-ui-image';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -39,6 +40,13 @@ const useStyles = makeStyles(theme => ({
     background:
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
+  message: {
+    position: "absolute",
+    top: 80,
+    left: "10%",
+    display: "block",
+    color: "white",
+  },
 }));
 
 export default function Landing() {
@@ -53,6 +61,7 @@ export default function Landing() {
               <Image
                 src="https://www.dropbox.com/s/bb3bp9zwiqclrb4/drip3.jpg?dl=1"
               />
+              <Typography variant="h4" className={classes.message} >Drip irrigation enables higher yields while saving water and energy.</Typography>
             </Link>
           </Paper>
         </Grid>
@@ -103,7 +112,6 @@ function SingleLineGridList() {
         {tileData.map((tile) => (
           <GridListTile key={tile.title} component={Link} href={tile.url} >
             <Image
-              animationDuration={5000}
               src={tile.img}
               disableSpinner
             />
