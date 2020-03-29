@@ -11,7 +11,6 @@ import Image from 'material-ui-image';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    width: "95%"
   },
   paper: {
     padding: theme.spacing(2),
@@ -48,8 +47,7 @@ export default function Landing() {
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12}>
           <Paper className={classes.paper} elevation={0}>
             <Link href="https://avantgardedistributors.com/services" >
               <Image
@@ -61,14 +59,11 @@ export default function Landing() {
             </Link>
           </Paper>
         </Grid>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12}>
           <Paper className={classes.paper} elevation={0}>
             <SingleLineGridList />
           </Paper>
         </Grid>
-        <Grid item xs={1}></Grid>
       </Grid>
     </div>
   );
