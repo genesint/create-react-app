@@ -46,6 +46,7 @@ const useStyles = makeStyles(theme => ({
     left: "10%",
     display: "block",
     color: "white",
+    textTransform: "uppercase",
   },
 }));
 
@@ -61,7 +62,7 @@ export default function Landing() {
               <Image
                 src="https://www.dropbox.com/s/bb3bp9zwiqclrb4/drip3.jpg?dl=1"
               />
-              <Typography variant="h4" className={classes.message} >Drip irrigation enables higher yields while saving water and energy.</Typography>
+              <Typography variant="h5" className={classes.message} >Drip irrigation enables higher yields while saving water and energy</Typography>
             </Link>
           </Paper>
         </Grid>
