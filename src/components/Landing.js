@@ -40,14 +40,6 @@ const useStyles = makeStyles(theme => ({
     background:
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
-  message: {
-    position: "absolute",
-    top: 80,
-    left: "10%",
-    display: "block",
-    color: "white",
-    textTransform: "uppercase",
-  },
 }));
 
 export default function Landing() {
@@ -62,7 +54,6 @@ export default function Landing() {
               <Image
                 src="https://www.dropbox.com/s/bb3bp9zwiqclrb4/drip3.jpg?dl=1"
               />
-              <Typography variant="h5" className={classes.message} >Drip irrigation enables higher yields while saving water and energy</Typography>
             </Link>
           </Paper>
         </Grid>
