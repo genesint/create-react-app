@@ -1,0 +1,34 @@
+{
+    "main": {
+        "img": "https://www.dropbox.com/s/bb3bp9zwiqclrb4/drip3.jpg?dl=1",
+        "title": "Drip Irrigation saves water and energy, and improves yields",
+        "url": "https://avantgardedistributors.com/services"
+    },
+    "tiles": [
+        {
+            "img": "https://www.dropbox.com/s/s8erukb5nx7tbhv/pumps.jpg?dl=1",
+            "title": "Pumps",
+            "url": "https: //avantgardedistributors.com/shop/category/water-division-pumps-1?order=name+asc"
+        },
+        {
+            "img": "https://www.dropbox.com/s/24i0h5xxtrth7jr/pipes.jpg?dl=1",
+            "title": "Hoses",
+            "url": "https: //avantgardedistributors.com/shop/category/water-division-hoses-3?order=name+asc"
+        },
+        {
+            "img": "https://www.dropbox.com/s/03c8q0lt2kr0278/assecories.jpg?dl=1",
+            "title": "Fittings & Accessories",
+            "url": "https: //avantgardedistributors.com/shop/category/water-division-fittings-accessories-6?order=name+asc"
+        },
+        {
+            "img": "https://www.dropbox.com/s/r5lgl1mx9ruz428/generator.jpg?dl=1",
+            "title": "Generators",
+            "url": "https: //avantgardedistributors.com/shop/category/water-division-generators-4?order=name+asc"
+        },
+        {
+            "img": "https://www.dropbox.com/s/jshc1zq0opmhyfi/parts.jpg?dl=1",
+            "title": "Spares",
+            "url": "https: //avantgardedistributors.com/shop/category/water-division-spares-5?order=name+asc"
+        }
+    ]
+}

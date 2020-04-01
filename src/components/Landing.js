@@ -6,8 +6,10 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Link from '@material-ui/core/Link';
-import Image from 'material-ui-image';
 import { Typography } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Image from 'material-ui-image';
+import useSWR from 'swr';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -40,26 +42,52 @@ const useStyles = makeStyles(theme => ({
     background:
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
+  progress: {
+    display: 'flex',
+    '& > * + *': {
+      marginLeft: theme.spacing(2),
+    },
+    marginLeft: "50%",
+
+  },
 }));
 
+const LoadingFrontPage = () => {
+  const classes = useStyles();
+  return (
+    <div className={classes.progress}>
+      <CircularProgress />
+    </div>
+  );
+}
 export default function Landing() {
   const classes = useStyles();
-
+  const { data, error } = useSWR('path', fetchConfig);
+  if (error) return <div>failed to load</div>
+  if (!data) return <LoadingFrontPage />
   return (
     <div className={classes.root}>
-      <Grid container spacing={1}>
+      <Grid container spacing={0}>
         <Grid item xs={12}>
           <Paper className={classes.paper} elevation={0}>
-            <Link href="https://avantgardedistributors.com/services" >
-              <Image
-                src="https://www.dropbox.com/s/bb3bp9zwiqclrb4/drip3.jpg?dl=1"
-              />
-            </Link>
+            <GridList cellHeight={320} spacing={1} className={classes.gridList} style={{ width: "100%" }} >
+              <GridListTile style={{ width: "100%" }} >
+                <Link href={data.main.url} >
+                  <Image
+                    src={data.main.img}
+                  />
+                </Link>
+                <GridListTileBar
+                  title={<Typography variant="h5">{data.main.title}</Typography>}
+                  titlePosition="top"
+                />
+              </GridListTile>
+            </GridList>
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paper} elevation={0}>
-            <SingleLineGridList />
+            <SingleLineGridList tiles={data.tiles} />
           </Paper>
         </Grid>
       </Grid>
@@ -67,40 +95,14 @@ export default function Landing() {
   );
 }
 
-const tileData = [
-  {
-    img: "https://www.dropbox.com/s/s8erukb5nx7tbhv/pumps.jpg?dl=1",
-    title: 'Pumps',
-    url: 'https://avantgardedistributors.com/shop/category/water-division-pumps-1?order=name+asc',
-  },
-  {
-    img: "https://www.dropbox.com/s/24i0h5xxtrth7jr/pipes.jpg?dl=1",
-    title: 'Hoses',
-    url: 'https://avantgardedistributors.com/shop/category/water-division-hoses-3?order=name+asc',
-  },
-  {
-    img: "https://www.dropbox.com/s/03c8q0lt2kr0278/assecories.jpg?dl=1",
-    title: 'Fittings & Accessories',
-    url: 'https://avantgardedistributors.com/shop/category/water-division-fittings-accessories-6?order=name+asc',
-  },
-  {
-    img: "https://www.dropbox.com/s/r5lgl1mx9ruz428/generator.jpg?dl=1",
-    title: 'Generators',
-    url: 'https://avantgardedistributors.com/shop/category/water-division-generators-4?order=name+asc',
-  },
-  {
-    img: "https://www.dropbox.com/s/jshc1zq0opmhyfi/parts.jpg?dl=1",
-    title: 'Spares',
-    url: 'https://avantgardedistributors.com/shop/category/water-division-spares-5?order=name+asc',
-  },
-];
 
-function SingleLineGridList() {
+function SingleLineGridList(props) {
   const classes = useStyles();
-
+  const tileData = props.tiles;
+  console.log(tileData)
   return (
     <div className={classes.gridRoot}>
-      <GridList className={classes.gridList} cols={5} cellHeight={240} spacing={1} >
+      <GridList className={classes.gridList} cols={5} cellHeight={240} spacing={1} style={{ "backgroundColor": "#000", "borderTopWidth": 1, "borderTopStyle": "solid" }}>
         {tileData.map((tile) => (
           <GridListTile key={tile.title} component={Link} href={tile.url} >
             <Image
@@ -115,4 +117,13 @@ function SingleLineGridList() {
       </GridList>
     </div >
   );
+}
+
+
+const fetchConfig = async (path) => {
+  var targetUrl = 'https://dl.dropboxusercontent.com/s/u5as349xx3r18r5/tiles.json';
+  let response = await fetch(targetUrl)
+  let responseText = await response.text();
+  let jsonData = JSON.parse(responseText)
+  return { tiles: jsonData.tiles, main: jsonData.main }
 }
