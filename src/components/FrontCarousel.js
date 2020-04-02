@@ -27,13 +27,14 @@ const useStyles = makeStyles(theme => ({
         right: "0 !important",
         left: "auto !important",
         bottom: "auto !important",
-        top: "10% !important",
+        top: "20% !important",
         borderRadius: "0 !important",
         minHeight: "60%",
-        background: "#0f0ff0 !important",
+        background: "rgba(255, 255, 255, 0.3) !important",
         color: "#000 !important",
         opacity: "1 !important",
-        transition: "unset !important"
+        transition: "unset !important",
+
 
 
     },
@@ -62,25 +63,24 @@ export default function FrontCarousel(props) {
                     <Grid container spacing={1}>
                         <Grid item xs={12}>
                             <Paper className={classes.paper} elevation={0} style={{
-                                backgroundImage: `url('http://placehold.it/800x280')`
+                                backgroundImage: `url('${slide.img}')`
                             }}>
                             </Paper>
                         </Grid>
                     </Grid>
                     <Typography component="div" className={`legend ${classes.legend}`}>
-                        <p>
-                            {slide.title}</p>
-                        <p>
-                            <Button
-                                component="a"
-                                href={slide.url}
-                                variant="contained"
-                                color="primary"
-                                style={{ position: "absolute", left: "5%", bottom: "5%" }}
-                                disableElevation>
-                                Browse products
-                        </Button></p>
-
+                        <Typography variant="h6" style={{ textAlign: "left" }} gutterBottom>{slide.title}</Typography>
+                        <Typography variant="body1" style={{ textAlign: "left" }} gutterBottom>{slide.description}</Typography>
+                        <Button
+                            component="a"
+                            href={slide.url}
+                            variant="contained"
+                            color="primary"
+                            disableElevation
+                            style={{ float: "left" }}
+                        >
+                            {slide.buttonText}
+                        </Button>
                     </Typography>
                 </div>
             ))}
