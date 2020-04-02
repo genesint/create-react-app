@@ -78,6 +78,7 @@ export default function FrontCarousel(props) {
                             color="primary"
                             disableElevation
                             style={{ float: "left" }}
+                            size="small"
                         >
                             {slide.buttonText}
                         </Button>
