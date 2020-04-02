@@ -2,11 +2,18 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
+const theme = createMuiTheme({
+    typography: {
+        // Tell Material-UI what the font-size on the html element is.
+        htmlFontSize: 10,
+    },
+});
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -68,21 +75,23 @@ export default function FrontCarousel(props) {
                             </Paper>
                         </Grid>
                     </Grid>
-                    <Typography component="div" className={`legend ${classes.legend}`}>
-                        <Typography variant="h6" style={{ textAlign: "left" }} gutterBottom>{slide.title}</Typography>
-                        <Typography variant="body1" style={{ textAlign: "left" }} gutterBottom>{slide.description}</Typography>
-                        <Button
-                            component="a"
-                            href={slide.url}
-                            variant="contained"
-                            color="primary"
-                            disableElevation
-                            style={{ float: "left" }}
-                            size="small"
-                        >
-                            {slide.buttonText}
-                        </Button>
-                    </Typography>
+                    <ThemeProvider theme={theme}>
+                        <Typography component="div" className={`legend ${classes.legend}`}>
+                            <Typography variant="h6" style={{ textAlign: "left" }} gutterBottom>{slide.title}</Typography>
+                            <Typography variant="body1" style={{ textAlign: "left" }} gutterBottom>{slide.description}</Typography>
+                            <Button
+                                component="a"
+                                href={slide.url}
+                                variant="contained"
+                                color="primary"
+                                disableElevation
+                                style={{ float: "left" }}
+                                size="small"
+                            >
+                                {slide.buttonText}
+                            </Button>
+                        </Typography>
+                    </ThemeProvider>
                 </div>
             ))}
         </Carousel>
