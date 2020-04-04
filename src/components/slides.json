@@ -1,0 +1,32 @@
+{
+    "tiles": [
+        {
+            "img": "https://dl.dropboxusercontent.com/s/momy90radodewqx/slide1.jpeg",
+            "title": "Drip Irrigation",
+            "description": "Drip Irrigation saves water and energy, and improves yields",
+            "buttonText": "Explore our services",
+            "url": "https://avantgardedistributors.com/services"
+        },
+        {
+            "img": "https://dl.dropboxusercontent.com/s/gin0ephjory2j94/slide2.jpeg",
+            "title": "Spares & after Sales Services",
+            "description": "Our products are supported with all the necessary spare parts and our team of engineers are readily available for technical support. Contact us at a branch near you. Mbale, Gulu, Arua, Mbarara, Lyantonde, Jinja, Kampala, Hoima and more.",
+            "buttonText": "Contact us",
+            "url": "https://avantgardedistributors.com/shop/category/water-division-pumps-1?order=name+asc"
+        },
+        {
+            "img": "https://dl.dropboxusercontent.com/s/qruc8joml605qgm/slide3.jpeg",
+            "title": "Generators and Water Pumps",
+            "description": "We offer generators and water pumps and accessories like hose pipes etc both for agricultural and construction works. We do both outdoor and household plumbing.",
+            "buttonText": "Browse Our Product Catalog",
+            "url": "https://avantgardedistributors.com/shop/category/water-division-hoses-3?order=name+asc"
+        },
+        {
+            "img": "https://dl.dropboxusercontent.com/s/jpsg65qi17xo4j0/slide4.jpeg",
+            "title": "Fittings & Accessories",
+            "description": "Our products are supported with all the necessary spare parts and our team of engineers are readily available for technical support. Contact us at a branch near you. Mbale, Gulu, Arua, Mbarara, Lyantonde, Jinja, Kampala, Hoima and more.",
+            "buttonText": "Explore",
+            "url": "https://avantgardedistributors.com/shop/category/water-division-fittings-accessories-6?order=name+asc"
+        }
+    ]
+}
