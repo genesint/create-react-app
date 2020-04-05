@@ -49,7 +49,7 @@ export default function Landing() {
         <Grid item xs={1}></Grid>
         <Grid item xs={10}>
           <Paper className={classes.paper} elevation={0}>
-            <FrontCarousel slides={data.tiles} /></Paper>
+            <FrontCarousel slides={data.slides} /></Paper>
         </Grid>
         <Grid item xs={1}></Grid>
       </Grid>
@@ -60,9 +60,9 @@ export default function Landing() {
 
 
 const fetchConfig = async (path) => {
-  var targetUrl = 'https://dl.dropboxusercontent.com/s/u5as349xx3r18r5/tiles.json';
+  var targetUrl = 'https://dl.dropboxusercontent.com/s/etpj4r0suindpsc/slides.json';
   let response = await fetch(targetUrl)
   let responseText = await response.text();
   let jsonData = JSON.parse(responseText)
-  return { tiles: jsonData.tiles, main: jsonData.main }
+  return { slides: jsonData.slides}
 }
