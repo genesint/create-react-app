@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
         height: 320,
-        //width:800,
+        width:"100%",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top left",
 
