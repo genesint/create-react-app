@@ -77,7 +77,7 @@ export default function FrontCarousel(props) {
                     </Grid>
                     <ThemeProvider theme={theme}>
                         <Typography component="div" className={`legend ${classes.legend}`}>
-                            <Typography variant="h6" style={{ textAlign: "left" }} gutterBottom>{slide.title}</Typography>
+                            <Typography variant="h6" style={{ textAlign: "left", color:"#fff" }} gutterBottom>{slide.title}</Typography>
                             <Typography variant="body1" style={{ textAlign: "left" }} gutterBottom>{slide.description}</Typography>
                             <Button
                                 component="a"
