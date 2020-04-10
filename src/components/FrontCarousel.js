@@ -22,27 +22,27 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
-        height: 320,
+        height: 400,
         width:"100%",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top left",
 
     },
     legend: {
-        width: "50% !important",
-        marginLeft: "0 !important",
+        width: "30% !important",
+        marginLeft: "5% !important",
         right: "0 !important",
         left: "auto !important",
         bottom: "auto !important",
         top: "20% !important",
         borderRadius: "0 !important",
-        minHeight: "60%",
-        background: "rgba(255, 255, 255, 0.3) !important",
-        color: "#000 !important",
+        minHeight: "50%",
+        background: "rgba(8,83,234) !important",
+        color: "#fff !important",
         opacity: "1 !important",
         transition: "unset !important",
 
-
+        
 
     },
 }));
@@ -83,7 +83,7 @@ export default function FrontCarousel(props) {
                                 component="a"
                                 href={slide.url}
                                 variant="contained"
-                                color="primary"
+                                color="default"
                                 disableElevation
                                 style={{ float: "left" }}
                                 size="small"

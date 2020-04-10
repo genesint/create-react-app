@@ -48,7 +48,7 @@ export default function Landing() {
       <Grid container spacing={1}>
         <Grid item xs={1}></Grid>
         <Grid item xs={10}>
-          <Paper className={classes.paper} elevation={0}>
+          <Paper className={classes.paper} elevation={0} style={{width:"100%"}}>
             <FrontCarousel slides={data.slides} /></Paper>
         </Grid>
         <Grid item xs={1}></Grid>

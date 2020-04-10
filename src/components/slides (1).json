@@ -27,6 +27,13 @@
             "description": "Our products are supported with all the necessary spare parts and our team of engineers are readily available for technical support. Contact us at a branch near you. Mbale, Gulu, Arua, Mbarara, Lyantonde, Jinja, Kampala, Hoima and more.",
             "buttonText": "Click here for more product details",
             "url": "https://avantgardedistributors.com/shop/category/water-division-spares-5?order=name+asc"
+        },
+        {
+            "img": "https://dl.dropboxusercontent.com/s/q1a554t8lvrimvy/slide5.jpg",
+            "title": "Generators",
+            "description": "We supply and support a full range of standby and prime generators for outdoor activities and power supply.",
+            "buttonText": "Click here for more product details",
+            "url": "https://avantgardedistributors.com/shop/category/water-division-generators-4?order=name+asc"
         }
     ]
 }
